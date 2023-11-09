@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+mainClassName = 'Task'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
+}
+
+tasks.register('runJava', JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'Task'
+}
